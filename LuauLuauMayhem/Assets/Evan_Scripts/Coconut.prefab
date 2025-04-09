@@ -125,6 +125,7 @@ MonoBehaviour:
   triggerForce: 2.04
   explosionRadius: 13.7
   explosionForce: 725
+  particles: {fileID: 417761080263594737, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
 --- !u!54 &5704612193327986680
 Rigidbody:
   m_ObjectHideFlags: 0
