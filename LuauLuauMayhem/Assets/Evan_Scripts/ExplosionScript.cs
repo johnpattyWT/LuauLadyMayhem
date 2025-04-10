@@ -16,7 +16,7 @@ public class ExplosionScript : MonoBehaviour
 
     public void SetExplosionScale(float chargePercent)
     {
-        particleScaleMultiplier = Mathf.Lerp(1f, 3f, chargePercent); // Scale from 1x to 3x
+        particleScaleMultiplier = Mathf.Lerp(0.08f, 3f, chargePercent); // Scale from 1x to 3x
     }
 
     private void OnCollisionEnter(Collision collision)

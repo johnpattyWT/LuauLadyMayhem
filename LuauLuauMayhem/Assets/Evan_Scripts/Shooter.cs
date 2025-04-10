@@ -81,7 +81,7 @@ public class PlayerShooter : MonoBehaviour
             rb.linearVelocity = shootDirection * speed;
         }
 
-        float minExplosionForce = 300f;
+        float minExplosionForce = 500f;
         float maxExplosionForce = 1200f;
         float explosionForce = Mathf.Lerp(minExplosionForce, maxExplosionForce, chargePercent);
 

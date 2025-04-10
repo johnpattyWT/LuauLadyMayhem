@@ -1728,9 +1728,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 620774941450959388, guid: 297cdc00889bcc14b97036b54eb309ae, type: 3}
   shootPoint: {fileID: 8266068757388998383}
-  projectileSpeed: 40
+  maxChargeTime: 4
+  maxProjectileSpeed: 50
   fireCooldown: 0.25
   playerCamera: {fileID: 0}
+  chargeSlider: {fileID: 0}
 --- !u!1 &6713737998699116194
 GameObject:
   m_ObjectHideFlags: 0
