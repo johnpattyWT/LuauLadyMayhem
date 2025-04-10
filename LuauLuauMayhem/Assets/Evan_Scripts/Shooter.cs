@@ -18,6 +18,13 @@ public class PlayerShooter : MonoBehaviour
     private bool isCharging;
     private float lastFireTime;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -64,7 +71,7 @@ public class PlayerShooter : MonoBehaviour
             isCharging = false;
         }
     }
-
+    // Changed to account for the player's velocity as well as the pre-defined and charge velocity (prevents player moving faster than the gun can shoot)
     void Shoot(float speed, float chargePercent)
     {
         if (projectilePrefab == null || shootPoint == null || playerCamera == null)
@@ -76,9 +83,16 @@ public class PlayerShooter : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.LookRotation(shootDirection));
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
+        Vector3 playerVelocity = Vector3.zero;
+        Rigidbody playerRb = GetComponent<Rigidbody>(); 
+        if (playerRb != null)
+        {
+            playerVelocity = playerRb.linearVelocity;
+        }
+
         if (rb != null)
         {
-            rb.linearVelocity = shootDirection * speed;
+            rb.linearVelocity = shootDirection * speed + playerVelocity;
         }
 
         float minExplosionForce = 500f;
