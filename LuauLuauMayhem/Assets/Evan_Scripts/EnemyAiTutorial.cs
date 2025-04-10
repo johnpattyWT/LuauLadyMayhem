@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
+
 public class EnemyAiTutorial : MonoBehaviour
 {
     public NavMeshAgent agent;
@@ -16,10 +17,11 @@ public class EnemyAiTutorial : MonoBehaviour
     public float walkPointRange;
 
     // Attacking
-    public float timeBetweenAttacks = 6f; // Delay between shots
+    public float minAttackDelay = 2f;
+    public float maxAttackDelay = 6f;
     bool alreadyAttacked;
     public GameObject projectile;
-    public Transform projectileSpawnPoint; // NEW: spawn from here if set
+    public Transform projectileSpawnPoint; // Spawn from this point if set
 
     // States
     public float sightRange, attackRange;
@@ -27,7 +29,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("TempPlayer").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -36,14 +38,18 @@ public class EnemyAiTutorial : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (!playerInSightRange && !playerInAttackRange)
+            Patroling();
+        else if (playerInSightRange && !playerInAttackRange)
+            ChasePlayer();
+        else if (playerInAttackRange && playerInSightRange)
+            AttackPlayer();
     }
 
     private void Patroling()
     {
-        if (!walkPointSet) SearchWalkPoint();
+        if (!walkPointSet)
+            SearchWalkPoint();
 
         if (walkPointSet)
             agent.SetDestination(walkPoint);
@@ -72,19 +78,37 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void AttackPlayer()
     {
-        agent.SetDestination(transform.position); // Stop moving
+        // Stop moving and face the player.
+        agent.SetDestination(transform.position);
         transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
+            // Use the projectile spawn point if set; otherwise, use the enemy's position.
             Transform spawn = projectileSpawnPoint != null ? projectileSpawnPoint : transform;
 
-            Rigidbody rb = Instantiate(projectile, spawn.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            // Instantiate the projectile.
+            GameObject proj = Instantiate(projectile, spawn.position, Quaternion.identity);
+            Rigidbody rb = proj.GetComponent<Rigidbody>();
+
+            // Determine a blended direction so the projectile doesn't go exactly straight forward.
+            Vector3 baseDirection = transform.forward;
+            Vector3 toPlayer = (player.position - spawn.position).normalized;
+            Vector3 finalDirection = (baseDirection * 0.7f + toPlayer * 0.3f).normalized;
+
+            rb.AddForce(finalDirection * 32f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
 
+            // If the projectile has a homing script, set its target.
+            Bullet homing = proj.GetComponent<Bullet>();
+            if (homing != null)
+            {
+                homing.target = player;
+            }
+
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks); // Wait 6 seconds before next attack
+            float randomAttackDelay = Random.Range(minAttackDelay, maxAttackDelay);
+            Invoke(nameof(ResetAttack), randomAttackDelay);
         }
     }
 
@@ -97,14 +121,23 @@ public class EnemyAiTutorial : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (health <= 0)
+            Invoke(nameof(DestroyEnemy), 0.5f);
     }
 
     private void DestroyEnemy()
     {
+        // Register the kill using the Game object in the scene.
+        Game gameInstance = FindObjectOfType<Game>();
+        if (gameInstance != null)
+        {
+            gameInstance.RegisterKill();
+        }
+
+        // Remove enemy components to allow physics (if desired), then destroy.
         Destroy(GetComponent<EnemyAiTutorial>());
         Destroy(GetComponent<NavMeshAgent>());
-        Destroy(this); // Remove script
+        Destroy(this); // Remove script instance
     }
 
     private void OnDrawGizmosSelected()
