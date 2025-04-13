@@ -294,7 +294,7 @@ Material:
     - _Cull: 2
     - _CullMode: 2
     - _CullModeForward: 2
-    - _Cutoff: 0.371
+    - _Cutoff: 0.939
     - _DepthOffsetEnable: 0
     - _DetailAlbedoMapScale: 1
     - _DetailAlbedoScale: 1
