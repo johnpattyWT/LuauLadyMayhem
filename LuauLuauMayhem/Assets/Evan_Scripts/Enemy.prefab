@@ -118,6 +118,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3699280208909425672}
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2976573173694132918}
   m_SourcePrefab: {fileID: 100100000, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
 --- !u!4 &46247424503961180 stripped
 Transform:
@@ -174,7 +177,8 @@ MonoBehaviour:
   health: 1
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 6
+  minAttackDelay: 2
+  maxAttackDelay: 6
   projectile: {fileID: 2949787963270250040, guid: 754827dcd4d785e45a3156613453bc3a, type: 3}
   projectileSpawnPoint: {fileID: 703853008470890040}
   sightRange: 30
@@ -231,3 +235,30 @@ CapsuleCollider:
   m_Height: 1.51
   m_Direction: 1
   m_Center: {x: 0, y: 0.45, z: -0.1}
+--- !u!1 &8530475774732858431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
+  m_PrefabInstance: {fileID: 517620064949154231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2976573173694132918
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530475774732858431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 31a86c9c095a87b42a115260588f48eb, type: 3}
+  m_Controller: {fileID: 9100000, guid: cbd1db45c75e5b948a5befe9ecb80421, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

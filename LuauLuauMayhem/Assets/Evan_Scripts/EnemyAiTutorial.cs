@@ -97,7 +97,7 @@ public class EnemyAiTutorial : MonoBehaviour
             Vector3 finalDirection = (baseDirection * 0.7f + toPlayer * 0.3f).normalized;
 
             rb.AddForce(finalDirection * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 2f, ForceMode.Impulse);
 
             // If the projectile has a homing script, set its target.
             Bullet homing = proj.GetComponent<Bullet>();
