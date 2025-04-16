@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37956caa5ac9b844aa4f17d38eecc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  lifetime: 10
+  target: {fileID: 0}
+  homingStrength: 0.5
+  particles: {fileID: 6146545414153545494, guid: 62473e50f8eb5ed45914d6407f764de8, type: 3}
 --- !u!54 &390024586536645504
 Rigidbody:
   m_ObjectHideFlags: 0
