@@ -1,3 +1,5 @@
+using Invector.vCharacterController;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +33,7 @@ public class PlayerShooter : MonoBehaviour
         {
             chargeStartTime = Time.time;
             isCharging = true;
+            if (animatorController != null) animatorController.isThrowing = true;
         }
 
         if (Input.GetMouseButton(0) && isCharging)
@@ -69,8 +72,18 @@ public class PlayerShooter : MonoBehaviour
 
             lastFireTime = Time.time;
             isCharging = false;
+
+            // Reset isThrowing a bit later to allow animation to play
+            if (animatorController != null) StartCoroutine(ResetThrowing(0.3f));
         }
     }
+    private IEnumerator ResetThrowing(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (animatorController != null)
+            animatorController.isThrowing = false;
+    }
+
     // Changed to account for the player's velocity as well as the pre-defined and charge velocity (prevents player moving faster than the gun can shoot)
     void Shoot(float speed, float chargePercent)
     {
@@ -106,4 +119,11 @@ public class PlayerShooter : MonoBehaviour
             explosionScript.SetExplosionScale(chargePercent);
         }
     }
+    private vThirdPersonAnimator animatorController;
+
+    private void Awake()
+    {
+        animatorController = GetComponent<vThirdPersonAnimator>();
+    }
+
 }
