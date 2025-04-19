@@ -60,7 +60,7 @@ public class Game : MonoBehaviour
     public void RegisterKill()
     {
         globalKillCount++;
-        killCountText.text = globalKillCount.ToString();
+        killCountText.text = ("x" + globalKillCount.ToString());
 
         comboKills++;
         comboTimer = 0f;
