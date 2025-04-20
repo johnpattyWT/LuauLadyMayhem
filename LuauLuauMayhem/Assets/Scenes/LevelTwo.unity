@@ -7790,6 +7790,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4070848815092683626, guid: 94055c3936868454aa1b6ea44cc0bb11, type: 3}
   m_PrefabInstance: {fileID: 1513201244}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1022483868 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
+  m_PrefabInstance: {fileID: 2494422528844677652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1024740813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15853,6 +15858,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+      propertyPath: comboClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+      propertyPath: rankUpClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1022483868}
     - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
       propertyPath: killFeedText
       value: 

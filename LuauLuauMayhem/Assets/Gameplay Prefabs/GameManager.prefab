@@ -52,3 +52,8 @@ MonoBehaviour:
   styleGradeText: {fileID: 0}
   styleScoreSlider: {fileID: 0}
   killFeedText: {fileID: 0}
+  pausemenu: {fileID: 0}
+  audioSource: {fileID: 0}
+  killClip: {fileID: 8300000, guid: 37c9133889e2bfc4296ead93a281acc2, type: 3}
+  comboClip: {fileID: 0}
+  rankUpClip: {fileID: 0}

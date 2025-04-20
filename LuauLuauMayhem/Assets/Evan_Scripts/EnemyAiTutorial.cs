@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-
 public class EnemyAiTutorial : MonoBehaviour
 {
     public NavMeshAgent agent;
@@ -21,11 +20,20 @@ public class EnemyAiTutorial : MonoBehaviour
     public float maxAttackDelay = 6f;
     bool alreadyAttacked;
     public GameObject projectile;
-    public Transform projectileSpawnPoint; // Spawn from this point if set
+    public Transform projectileSpawnPoint;
 
     // States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+
+    // Audio
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip patrolClip;
+    public AudioClip chaseClip;
+    public AudioClip attackClip;
+    public AudioClip hurtClip;
+    public AudioClip deathClip;
 
     private void Awake()
     {
@@ -58,6 +66,9 @@ public class EnemyAiTutorial : MonoBehaviour
 
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
+
+        if (audioSource && patrolClip && !audioSource.isPlaying)
+            audioSource.PlayOneShot(patrolClip);
     }
 
     private void SearchWalkPoint()
@@ -74,24 +85,22 @@ public class EnemyAiTutorial : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+
+        if (audioSource && chaseClip && !audioSource.isPlaying)
+            audioSource.PlayOneShot(chaseClip);
     }
 
     private void AttackPlayer()
     {
-        // Stop moving and face the player.
         agent.SetDestination(transform.position);
         transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
-            // Use the projectile spawn point if set; otherwise, use the enemy's position.
             Transform spawn = projectileSpawnPoint != null ? projectileSpawnPoint : transform;
-
-            // Instantiate the projectile.
             GameObject proj = Instantiate(projectile, spawn.position, Quaternion.identity);
             Rigidbody rb = proj.GetComponent<Rigidbody>();
 
-            // Determine a blended direction so the projectile doesn't go exactly straight forward.
             Vector3 baseDirection = transform.forward;
             Vector3 toPlayer = (player.position - spawn.position).normalized;
             Vector3 finalDirection = (baseDirection * 0.7f + toPlayer * 0.3f).normalized;
@@ -99,7 +108,6 @@ public class EnemyAiTutorial : MonoBehaviour
             rb.AddForce(finalDirection * 32f, ForceMode.Impulse);
             rb.AddForce(transform.up * 2f, ForceMode.Impulse);
 
-            // If the projectile has a homing script, set its target.
             Bullet homing = proj.GetComponent<Bullet>();
             if (homing != null)
             {
@@ -109,6 +117,9 @@ public class EnemyAiTutorial : MonoBehaviour
             alreadyAttacked = true;
             float randomAttackDelay = Random.Range(minAttackDelay, maxAttackDelay);
             Invoke(nameof(ResetAttack), randomAttackDelay);
+
+            if (audioSource && attackClip)
+                audioSource.PlayOneShot(attackClip);
         }
     }
 
@@ -121,23 +132,27 @@ public class EnemyAiTutorial : MonoBehaviour
     {
         health -= damage;
 
+        if (audioSource && hurtClip)
+            audioSource.PlayOneShot(hurtClip);
+
         if (health <= 0)
             Invoke(nameof(DestroyEnemy), 0.5f);
     }
 
     private void DestroyEnemy()
     {
-        // Register the kill using the Game object in the scene.
         Game gameInstance = FindObjectOfType<Game>();
         if (gameInstance != null)
         {
             gameInstance.RegisterKill();
         }
 
-        // Remove enemy components to allow physics (if desired), then destroy.
+        if (audioSource && deathClip)
+            audioSource.PlayOneShot(deathClip);
+
         Destroy(GetComponent<EnemyAiTutorial>());
         Destroy(GetComponent<NavMeshAgent>());
-        Destroy(this); // Remove script instance
+        Destroy(this);
     }
 
     private void OnDrawGizmosSelected()

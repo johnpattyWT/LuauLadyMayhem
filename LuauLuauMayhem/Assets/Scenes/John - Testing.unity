@@ -9704,6 +9704,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f46f06206c9b324c9ee9089d1b45e21, type: 3}
+--- !u!82 &486222387 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
+  m_PrefabInstance: {fileID: 980478808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &489672971
 GameObject:
   m_ObjectHideFlags: 0
@@ -46582,6 +46587,10 @@ PrefabInstance:
       propertyPath: pausemenu
       value: 
       objectReference: {fileID: 888022250}
+    - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 486222387}
     - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
       propertyPath: killFeedText
       value: 

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -30,6 +30,14 @@ public class Game : MonoBehaviour
     private const float comboResetTime = 5f;
 
     public GameObject pausemenu;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip killClip;
+    public AudioClip comboClip;
+    public AudioClip rankUpClip;
+
+    private string lastGrade = "F";
 
     private void Awake()
     {
@@ -71,9 +79,17 @@ public class Game : MonoBehaviour
         int points = GetPointsForCombo(comboKills);
         styleScore += points;
 
+        // 🔊 Play kill sound
+        if (audioSource && killClip)
+            audioSource.PlayOneShot(killClip);
+
         UpdateGrade();
         AddKillMessage(comboKills);
         killFeedTimer = 0f;
+
+        // 🔊 Play combo sound (if combo is 2 or higher)
+        if (comboKills >= 2 && audioSource && comboClip)
+            audioSource.PlayOneShot(comboClip);
     }
 
     private int GetPointsForCombo(int combo)
@@ -92,12 +108,18 @@ public class Game : MonoBehaviour
 
     private void UpdateGrade()
     {
+        string previousGrade = currentGrade;
+
         if (styleScore >= 5000) currentGrade = "S";
         else if (styleScore >= 3000) currentGrade = "A";
         else if (styleScore >= 2000) currentGrade = "B";
         else if (styleScore >= 1000) currentGrade = "C";
         else if (styleScore >= 500) currentGrade = "D";
         else currentGrade = "F";
+
+        // 🔊 Play rank up sound if grade improved
+        if (currentGrade != previousGrade && audioSource && rankUpClip)
+            audioSource.PlayOneShot(rankUpClip);
     }
 
     private void UpdateUI()
@@ -163,5 +185,4 @@ public class Game : MonoBehaviour
             pausemenu.SetActive(false);
         }
     }
-
 }
