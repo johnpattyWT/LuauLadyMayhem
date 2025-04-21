@@ -42,7 +42,16 @@ public class PlayerShooter : MonoBehaviour
             chargingLoopSource.playOnAwake = false;
         }
     }
-
+    public void unlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    public void lockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
