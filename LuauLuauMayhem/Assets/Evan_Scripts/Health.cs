@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -67,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
-        // Add additional death logic (game over UI, restart, etc.)
+        SceneManager.LoadScene("LoseScreen");
     }
 
     private void OnCollisionEnter(Collision collision)
