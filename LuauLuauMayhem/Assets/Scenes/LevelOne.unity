@@ -15863,6 +15863,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+      propertyPath: pausemenu
+      value: 
+      objectReference: {fileID: 2120012250}
+    - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
       propertyPath: rankUpClip
       value: 
       objectReference: {fileID: 0}
@@ -16140,6 +16144,10 @@ PrefabInstance:
     - target: {fileID: 1348600504664819041, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_MaxValue
       value: 1907.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919963312467356154, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.3250732
       objectReference: {fileID: 0}
     - target: {fileID: 3748499756883922980, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_IsActive
@@ -16934,6 +16942,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c65c362d8007bd49b543e018d6efe83, type: 3}
+--- !u!1 &2120012250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3748499756883922980, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+  m_PrefabInstance: {fileID: 2025249880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2120707032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4266812171269307649, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}

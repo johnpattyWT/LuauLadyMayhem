@@ -22,7 +22,6 @@ namespace Invector.vCharacterController
             animator.SetBool(vAnimatorParameters.IsSprinting, isSprinting);
             animator.SetBool(vAnimatorParameters.IsGrounded, isGrounded);
             animator.SetFloat(vAnimatorParameters.GroundDistance, groundDistance);
-            animator.SetBool(vAnimatorParameters.IsThrowing, isThrowing);
 
             if (isStrafing)
             {
