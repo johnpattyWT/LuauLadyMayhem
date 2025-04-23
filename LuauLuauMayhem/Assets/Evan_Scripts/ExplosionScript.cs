@@ -1,30 +1,30 @@
-﻿    using UnityEngine;
+﻿using UnityEngine;
 
-    public class ExplosionScript : MonoBehaviour
+public class ExplosionScript : MonoBehaviour
+{
+    [Header("Explosion Settings")]
+    [SerializeField] private float triggerForce = 0.1f;
+    [SerializeField] private float explosionRadius = 10f;
+    [SerializeField] private float explosionForce = 500f;
+    [SerializeField] private GameObject particles;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip explosionClip;
+
+    private float particleScaleMultiplier = 1f;
+
+    public void SetExplosionForce(float newForce)
     {
-        [Header("Explosion Settings")]
-        [SerializeField] private float triggerForce = 0.1f;
-        [SerializeField] private float explosionRadius = 10f;
-        [SerializeField] private float explosionForce = 500f;
-        [SerializeField] private GameObject particles;
+        explosionForce = newForce;
+        Debug.Log($"[ExplosionScript] Explosion force set to {newForce}");
+    }
 
-        [Header("Audio")]
-        public AudioSource audioSource;
-        public AudioClip explosionClip;
-
-        private float particleScaleMultiplier = 1f;
-
-        public void SetExplosionForce(float newForce)
-        {
-            explosionForce = newForce;
-            Debug.Log($"[ExplosionScript] Explosion force set to {newForce}");
-        }
-
-        public void SetExplosionScale(float chargePercent)
-        {
-            particleScaleMultiplier = Mathf.Lerp(0.08f, 3f, chargePercent);
-            Debug.Log($"[ExplosionScript] Particle scale set to {particleScaleMultiplier} based on charge: {chargePercent}");
-        }
+    public void SetExplosionScale(float chargePercent)
+    {
+        particleScaleMultiplier = Mathf.Lerp(0.08f, 3f, chargePercent);
+        Debug.Log($"[ExplosionScript] Particle scale set to {particleScaleMultiplier} based on charge: {chargePercent}");
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -52,7 +52,7 @@
                 Destroy(tempAudio, explosionClip.length); // cleanup
             }
 
-
+            // Get all objects in explosion radius
             var surroundingObjects = Physics.OverlapSphere(transform.position, explosionRadius);
 
             foreach (var obj in surroundingObjects)
@@ -62,6 +62,14 @@
                 {
                     rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
 
+                    // If the object is a Breakable, force it to break with the explosion force
+                    Breakable breakable = obj.GetComponent<Breakable>();
+                    if (breakable != null)
+                    {
+                        breakable.ForceBreak(explosionForce);  // Pass actual explosion force
+                    }
+
+                    // If the object is an enemy, apply damage
                     var enemy = rb.GetComponent<EnemyAiTutorial>();
                     if (enemy != null)
                     {
@@ -71,6 +79,7 @@
                 }
             }
 
+            // Spawn explosion particles
             if (particles != null)
             {
                 GameObject p = Instantiate(particles, transform.position, Quaternion.identity);
@@ -78,13 +87,12 @@
                 Destroy(p, 3f);
             }
 
-            Destroy(gameObject); // 💥 Bullet destroyed, sound lives on briefly
+            // Destroy this explosion object after the effect
+            Destroy(gameObject);
         }
         else
         {
             Debug.Log("[ExplosionScript] Impact too soft. No boom.");
         }
     }
-
-
 }
