@@ -3,22 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Bullet
-  - Projectile
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Ground
-<<<<<<< HEAD
-  - Coconut
-=======
-  - UI2
->>>>>>> dff8350400ee716839be91073e16b348c2f3681b
+  - 
+  - 
   - 
   - 
   - 
@@ -49,10 +43,3 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
