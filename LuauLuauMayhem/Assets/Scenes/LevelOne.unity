@@ -9889,6 +9889,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1122489046}
     - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+      propertyPath: lifterScript
+      value: 
+      objectReference: {fileID: 2008296570}
+    - target: {fileID: 1751569302384213800, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
       propertyPath: killCountText
       value: 
       objectReference: {fileID: 1745734281}
@@ -9913,6 +9917,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+--- !u!1 &2008296569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008296571}
+  - component: {fileID: 2008296570}
+  m_Layer: 0
+  m_Name: 'Level One Progression '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2008296570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008296569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f327640a18c2eb2459bf5731784532e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 2189782315595518197}
+  targetY: -5
+  liftSpeed: 2
+  prefabsToSpawn: []
+  spawnPoint: {fileID: 0}
+--- !u!4 &2008296571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008296569}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 188.40016, y: 16.20562, z: -410.01233}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2016103287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 46247424503961180, guid: 596c1dfd1b230b44387c9b07f8c2fb75, type: 3}
@@ -13976,7 +14029,7 @@ Transform:
   m_GameObject: {fileID: 4189039180772518871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52, y: -3, z: -915}
+  m_LocalPosition: {x: -52, y: -63, z: -915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20879,3 +20932,4 @@ SceneRoots:
   - {fileID: 951445802}
   - {fileID: 1504608795}
   - {fileID: 6269296297045457601}
+  - {fileID: 2008296571}
