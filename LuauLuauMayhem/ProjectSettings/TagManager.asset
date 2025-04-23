@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Projectile
+<<<<<<< HEAD
+=======
+  - Deathzone
+>>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed
   layers:
   - Default
   - TransparentFX
