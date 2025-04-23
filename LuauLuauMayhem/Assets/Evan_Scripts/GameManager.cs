@@ -44,6 +44,7 @@ public class Game : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+        ResumeGame();
     }
 
     private void Update()
