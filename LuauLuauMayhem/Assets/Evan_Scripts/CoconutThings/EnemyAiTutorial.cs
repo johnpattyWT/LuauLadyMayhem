@@ -134,25 +134,6 @@ public class EnemyAiTutorial : MonoBehaviour
 
         if (audioSource && hurtClip)
             audioSource.PlayOneShot(hurtClip);
-
-        if (health <= 0)
-            Invoke(nameof(DestroyEnemy), 0.5f);
-    }
-
-    private void DestroyEnemy()
-    {
-        Game gameInstance = FindObjectOfType<Game>();
-        if (gameInstance != null)
-        {
-            gameInstance.RegisterKill();
-        }
-
-        if (audioSource && deathClip)
-            audioSource.PlayOneShot(deathClip);
-
-        Destroy(GetComponent<EnemyAiTutorial>());
-        Destroy(GetComponent<NavMeshAgent>());
-        Destroy(this);
     }
 
     private void OnDrawGizmosSelected()

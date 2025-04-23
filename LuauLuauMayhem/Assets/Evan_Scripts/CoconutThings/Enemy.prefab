@@ -173,7 +173,7 @@ MonoBehaviour:
   player: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
@@ -261,7 +261,7 @@ MonoBehaviour:
   _collisionMultiplier: 10
   breakFromLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   _broken: 0
 --- !u!1 &8530475774732858431 stripped
 GameObject:

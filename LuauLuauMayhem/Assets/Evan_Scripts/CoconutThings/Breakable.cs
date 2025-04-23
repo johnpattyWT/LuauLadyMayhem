@@ -26,6 +26,13 @@ public class Breakable : MonoBehaviour
             rb.AddExplosionForce(explosionForce, transform.position, 2f);
         }
 
+        // Register kill before destroying the enemy object
+        Game gameInstance = FindObjectOfType<Game>();
+        if (gameInstance != null)
+        {
+            gameInstance.RegisterKill();
+        }
+
         // Destroy the fragments after 10 seconds
         Destroy(replacement, 10f);
         Destroy(gameObject);  // Destroy the original object
