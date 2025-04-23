@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 416471374}
   - component: {fileID: 416471376}
   - component: {fileID: 416471375}
+  - component: {fileID: 416471377}
   m_Layer: 5
   m_Name: Lose Screen
   m_TagString: Untagged
@@ -543,6 +544,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416471373}
   m_CullTransparentMesh: 1
+--- !u!95 &416471377
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416471373}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c99443f9130e6f346909bdb71f9e4b6d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &459672862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1320,7 @@ RectTransform:
   m_GameObject: {fileID: 1760951161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.7562804, y: 4.7562804, z: 4.7562804}
+  m_LocalScale: {x: 4.7562804, y: 4.75628, z: 4.75628}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 416471374}
