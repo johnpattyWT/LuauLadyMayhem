@@ -30,6 +30,7 @@ public class Game : MonoBehaviour
     private const float comboResetTime = 5f;
 
     public GameObject pausemenu;
+    private bool isPaused = false;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -66,6 +67,17 @@ public class Game : MonoBehaviour
         }
 
         UpdateUI();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
     }
 
     public void RegisterKill()
@@ -169,7 +181,33 @@ public class Game : MonoBehaviour
         comboKills = 0;
         comboTimer = 0f;
     }
+    public void PauseGame()
+    {
+        if (pausemenu != null)
+        {
+            pausemenu.SetActive(true);
+        }
 
+        Time.timeScale = 0f; // Pause time
+        Cursor.lockState = CursorLockMode.None; // Unlock the cursor
+        Cursor.visible = true;
+
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        if (pausemenu != null)
+        {
+            pausemenu.SetActive(false);
+        }
+
+        Time.timeScale = 1f; // Resume time
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor back to the game
+        Cursor.visible = false;
+
+        isPaused = false;
+    }
     public void ShowPanel()
     {
         if (pausemenu != null)
