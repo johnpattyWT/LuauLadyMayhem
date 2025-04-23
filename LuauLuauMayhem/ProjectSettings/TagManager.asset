@@ -3,24 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
   tags:
   - Projectile
-=======
-  tags: []
->>>>>>> a16047a56038140945234aaf3afa61202d68db83
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-<<<<<<< HEAD
-  - Coconut
-=======
   - 
->>>>>>> a16047a56038140945234aaf3afa61202d68db83
   - 
   - 
   - 

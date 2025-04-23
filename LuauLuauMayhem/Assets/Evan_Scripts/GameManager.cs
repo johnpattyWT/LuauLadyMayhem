@@ -2,11 +2,14 @@
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using static UnityEngine.Rendering.DebugUI;
+using System;
 
 public class Game : MonoBehaviour
 {
     public static Game instance;
+
+    // 🔊 Event to notify other scripts when a kill is registered
+    public event Action OnKillRegistered;
 
     [Header("Kill Counter")]
     public int globalKillCount = 0;
@@ -62,29 +65,24 @@ public class Game : MonoBehaviour
         {
             killFeedTimer += Time.deltaTime;
             if (killFeedTimer >= killFeedClearTime)
-            {
                 ClearKillFeed();
-            }
         }
 
         UpdateUI();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
-            {
                 ResumeGame();
-            }
             else
-            {
                 PauseGame();
-            }
         }
     }
 
     public void RegisterKill()
     {
         globalKillCount++;
-        killCountText.text = ("x" + globalKillCount.ToString());
+        killCountText.text = "x" + globalKillCount.ToString();
 
         comboKills++;
         comboTimer = 0f;
@@ -92,7 +90,7 @@ public class Game : MonoBehaviour
         int points = GetPointsForCombo(comboKills);
         styleScore += points;
 
-        // 🔊 Play kill sound
+        // 🔊 Normal kill sound
         if (audioSource && killClip)
             audioSource.PlayOneShot(killClip);
 
@@ -100,9 +98,12 @@ public class Game : MonoBehaviour
         AddKillMessage(comboKills);
         killFeedTimer = 0f;
 
-        // 🔊 Play combo sound (if combo is 2 or higher)
+        // 🔊 Combo sound
         if (comboKills >= 2 && audioSource && comboClip)
             audioSource.PlayOneShot(comboClip);
+
+        // ✅ Broadcast the kill event
+        OnKillRegistered?.Invoke();
     }
 
     private int GetPointsForCombo(int combo)
@@ -130,19 +131,18 @@ public class Game : MonoBehaviour
         else if (styleScore >= 500) currentGrade = "D";
         else currentGrade = "F";
 
-        // 🔊 Play rank up sound if grade improved
         if (currentGrade != previousGrade && audioSource && rankUpClip)
             audioSource.PlayOneShot(rankUpClip);
     }
 
     private void UpdateUI()
     {
-        styleScoreText.text = "" + styleScore;
-        styleGradeText.text = "" + currentGrade;
+        styleScoreText.text = styleScore.ToString();
+        styleGradeText.text = currentGrade;
 
         if (styleScoreSlider != null)
         {
-            styleScoreSlider.maxValue = 5000; // Cap score
+            styleScoreSlider.maxValue = 5000;
             styleScoreSlider.value = Mathf.Clamp(styleScore, 0, 5000);
         }
 
@@ -182,46 +182,38 @@ public class Game : MonoBehaviour
         comboKills = 0;
         comboTimer = 0f;
     }
+
     public void PauseGame()
     {
         if (pausemenu != null)
-        {
             pausemenu.SetActive(true);
-        }
 
-        Time.timeScale = 0f; // Pause time
-        Cursor.lockState = CursorLockMode.None; // Unlock the cursor
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
         isPaused = true;
     }
 
     public void ResumeGame()
     {
         if (pausemenu != null)
-        {
             pausemenu.SetActive(false);
-        }
 
-        Time.timeScale = 1f; // Resume time
-        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor back to the game
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
         isPaused = false;
     }
+
     public void ShowPanel()
     {
         if (pausemenu != null)
-        {
             pausemenu.SetActive(true);
-        }
     }
 
     public void HidePanel()
     {
         if (pausemenu != null)
-        {
             pausemenu.SetActive(false);
-        }
     }
 }

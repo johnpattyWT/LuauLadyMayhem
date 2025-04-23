@@ -20,11 +20,14 @@ public class PlayerHealth : MonoBehaviour
     [Tooltip("Speed at which the health bar slides to the new value.")]
     public float smoothSpeed = 3f;
 
+    private PlayerAudioController audioController;
+
     private void Start()
     {
         currentHealth = maxHealth;
 
-        // Immediately set the slider and fill color at start
+        audioController = GetComponent<PlayerAudioController>();
+
         if (healthSlider != null)
             healthSlider.value = 1f;
         if (healthFillImage != null)
@@ -33,14 +36,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        // Smoothly update the slider value toward the target value
         float targetValue = (float)currentHealth / maxHealth;
         if (healthSlider != null)
         {
             healthSlider.value = Mathf.Lerp(healthSlider.value, targetValue, Time.deltaTime * smoothSpeed);
         }
 
-        // Update the color from low health (red) to full health (green)
         if (healthFillImage != null)
         {
             healthFillImage.color = Color.Lerp(lowHealthColor, fullHealthColor, targetValue);
@@ -55,6 +56,11 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= 20;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        if (audioController != null)
+        {
+            audioController.PlayHurtClip();
+        }
 
         if (currentHealth <= 0)
         {
@@ -73,7 +79,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check for a collision with objects tagged as "Projectile"
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Debug.Log("Hit by Projectile! Taking damage.");
