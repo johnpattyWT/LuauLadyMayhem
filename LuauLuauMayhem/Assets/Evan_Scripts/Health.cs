@@ -79,29 +79,28 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-<<<<<<< HEAD
-=======
-        // One-time hit detection (for projectiles, etc.)
->>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed
+        // One-time hit detection (e.g., projectiles)
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Debug.Log("Hit by Projectile! Taking damage.");
             TakeDamage();
         }
     }
-<<<<<<< HEAD
-}
-=======
+
+    private float damageCooldown = 2f; // Time in seconds between damage ticks
+    private float lastDamageTime = -Mathf.Infinity;
 
     private void OnCollisionStay(Collision collision)
     {
-        // Continuous damage when staying in the Deathzone
         if (collision.gameObject.CompareTag("Deathzone"))
         {
-            Debug.Log("Still in Deathzone! Taking continuous damage.");
-            TakeDamage();
+            if (Time.time - lastDamageTime >= damageCooldown)
+            {
+                Debug.Log("Still in Deathzone! Taking continuous damage.");
+                TakeDamage();
+                lastDamageTime = Time.time;
+            }
         }
     }
 
 }
->>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed

@@ -7,6 +7,7 @@ using System;
 public class Game : MonoBehaviour
 {
     public static Game instance;
+    public LevelOne lifterScript;
 
     // 🔊 Event to notify other scripts when a kill is registered
     public event Action OnKillRegistered;
@@ -77,7 +78,10 @@ public class Game : MonoBehaviour
             styleDecayTimer = 0f;
             UpdateGrade(); // re-evaluate grade after decay
         }
-
+        if (globalKillCount >= 40)
+        {
+            lifterScript.StartLiftSequence();
+        }
         UpdateUI();
 
         if (Input.GetKeyDown(KeyCode.Escape))
