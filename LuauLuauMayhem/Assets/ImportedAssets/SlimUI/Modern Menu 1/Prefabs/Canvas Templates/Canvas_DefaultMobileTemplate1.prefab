@@ -14440,12 +14440,6 @@ MonoBehaviour:
   texturemedtextLINE: {fileID: 1214645771038322}
   texturehightextLINE: {fileID: 1692943835170092}
   cameraeffectstext: {fileID: 1343022203762826}
-  showhudtext: {fileID: 1727231973901154}
-  tooltipstext: {fileID: 1441259928818632}
-  difficultynormaltext: {fileID: 1782866064716672}
-  difficultynormaltextLINE: {fileID: 1949208072322790}
-  difficultyhardcoretext: {fileID: 1905835318802512}
-  difficultyhardcoretextLINE: {fileID: 1769288772645506}
   invertmousetext: {fileID: 1046960263368942}
   musicSlider: {fileID: 1611640247830470}
   sensitivityXSlider: {fileID: 1097090015846844}

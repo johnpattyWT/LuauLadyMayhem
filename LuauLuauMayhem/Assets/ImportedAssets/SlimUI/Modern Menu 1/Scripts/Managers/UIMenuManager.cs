@@ -116,8 +116,9 @@ namespace SlimUI.ModernMenu{
 					break;
 			}
 		}
+		
 
-		public void PlayCampaign(){
+        public void PlayCampaign(){
 			exitMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
 			playMenu.SetActive(true);

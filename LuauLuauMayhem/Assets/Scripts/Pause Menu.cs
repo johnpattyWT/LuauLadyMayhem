@@ -18,6 +18,8 @@ public class SceneAndUIManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
+        Time.timeScale = 1f; // Resume time
+
     }
 
     /// <summary>
@@ -63,3 +65,4 @@ public class SceneAndUIManager : MonoBehaviour
         }
     }
 }
+ 
