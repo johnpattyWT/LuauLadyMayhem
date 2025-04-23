@@ -16,16 +16,41 @@ public class PlayerShooter : MonoBehaviour
     [Header("UI")]
     public Slider chargeSlider;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip chargeStartClip;
+    public AudioClip chargingLoopClip;
+    public AudioClip shootClip;
+    public AudioClip chargeCancelClip;
+
     private float chargeStartTime;
     private bool isCharging;
     private float lastFireTime;
+
+    private AudioSource chargingLoopSource;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-
+        if (chargingLoopClip != null)
+        {
+            chargingLoopSource = gameObject.AddComponent<AudioSource>();
+            chargingLoopSource.clip = chargingLoopClip;
+            chargingLoopSource.loop = true;
+            chargingLoopSource.playOnAwake = false;
+        }
+    }
+    public void unlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    public void lockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     void Update()
     {
@@ -34,6 +59,14 @@ public class PlayerShooter : MonoBehaviour
             chargeStartTime = Time.time;
             isCharging = true;
             if (animatorController != null) animatorController.isThrowing = true;
+
+            // Play charge start sound
+            if (audioSource != null && chargeStartClip != null)
+                audioSource.PlayOneShot(chargeStartClip);
+
+            // Start charging loop sound
+            if (chargingLoopSource != null)
+                chargingLoopSource.Play();
         }
 
         if (Input.GetMouseButton(0) && isCharging)
@@ -73,10 +106,30 @@ public class PlayerShooter : MonoBehaviour
             lastFireTime = Time.time;
             isCharging = false;
 
+            // Stop charging loop
+            if (chargingLoopSource != null)
+                chargingLoopSource.Stop();
+
+            // Play shooting sound
+            if (audioSource != null && shootClip != null)
+                audioSource.PlayOneShot(shootClip);
+
             // Reset isThrowing a bit later to allow animation to play
             if (animatorController != null) StartCoroutine(ResetThrowing(0.3f));
         }
+
+        // Optional: cancel charging if mouse is released too soon
+        if (Input.GetMouseButtonUp(0) && isCharging && Time.time < lastFireTime + fireCooldown)
+        {
+            isCharging = false;
+            if (chargingLoopSource != null)
+                chargingLoopSource.Stop();
+
+            if (audioSource != null && chargeCancelClip != null)
+                audioSource.PlayOneShot(chargeCancelClip);
+        }
     }
+
     private IEnumerator ResetThrowing(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -84,7 +137,6 @@ public class PlayerShooter : MonoBehaviour
             animatorController.isThrowing = false;
     }
 
-    // Changed to account for the player's velocity as well as the pre-defined and charge velocity (prevents player moving faster than the gun can shoot)
     void Shoot(float speed, float chargePercent)
     {
         if (projectilePrefab == null || shootPoint == null || playerCamera == null)
@@ -97,7 +149,7 @@ public class PlayerShooter : MonoBehaviour
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
         Vector3 playerVelocity = Vector3.zero;
-        Rigidbody playerRb = GetComponent<Rigidbody>(); 
+        Rigidbody playerRb = GetComponent<Rigidbody>();
         if (playerRb != null)
         {
             playerVelocity = playerRb.linearVelocity;
@@ -119,11 +171,11 @@ public class PlayerShooter : MonoBehaviour
             explosionScript.SetExplosionScale(chargePercent);
         }
     }
+
     private vThirdPersonAnimator animatorController;
 
     private void Awake()
     {
         animatorController = GetComponent<vThirdPersonAnimator>();
     }
-
 }
