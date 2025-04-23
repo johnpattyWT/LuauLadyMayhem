@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Game : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Game : MonoBehaviour
     private int comboKills = 0;
     private float comboTimer = 0f;
     private const float comboResetTime = 5f;
+
+    public GameObject pausemenu;
 
     private void Awake()
     {
@@ -60,7 +63,7 @@ public class Game : MonoBehaviour
     public void RegisterKill()
     {
         globalKillCount++;
-        killCountText.text = globalKillCount.ToString();
+        killCountText.text = ("x" + globalKillCount.ToString());
 
         comboKills++;
         comboTimer = 0f;
@@ -144,4 +147,21 @@ public class Game : MonoBehaviour
         comboKills = 0;
         comboTimer = 0f;
     }
+
+    public void ShowPanel()
+    {
+        if (pausemenu != null)
+        {
+            pausemenu.SetActive(true);
+        }
+    }
+
+    public void HidePanel()
+    {
+        if (pausemenu != null)
+        {
+            pausemenu.SetActive(false);
+        }
+    }
+
 }
