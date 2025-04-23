@@ -87,13 +87,20 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private float damageCooldown = 2f; // Time in seconds between damage ticks
+    private float lastDamageTime = -Mathf.Infinity;
+
     private void OnCollisionStay(Collision collision)
     {
-        // Continuous damage when staying in the Deathzone
         if (collision.gameObject.CompareTag("Deathzone"))
         {
-            Debug.Log("Still in Deathzone! Taking continuous damage.");
-            TakeDamage();
+            if (Time.time - lastDamageTime >= damageCooldown)
+            {
+                Debug.Log("Still in Deathzone! Taking continuous damage.");
+                TakeDamage();
+                lastDamageTime = Time.time;
+            }
         }
     }
+
 }

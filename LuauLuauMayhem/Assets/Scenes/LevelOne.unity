@@ -7265,7 +7265,7 @@ Transform:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-   m_Modification:
+  m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
@@ -8857,7 +8857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4355190167128787356, guid: 09efb443539372945a0a24d4195b1210, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.9
+      value: 12.7
       objectReference: {fileID: 0}
     - target: {fileID: 4355190167128787356, guid: 09efb443539372945a0a24d4195b1210, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14388,10 +14388,6 @@ PrefabInstance:
       propertyPath: maxChargeTime
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4627156900746009396, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: chargeStartClip
       value: 
@@ -14407,6 +14403,10 @@ PrefabInstance:
     - target: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: m_Pitch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: m_PlayOnAwake
