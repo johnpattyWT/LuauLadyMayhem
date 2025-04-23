@@ -4,6 +4,36 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes: []
   m_configObjects: {}
+=======
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/TestScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/3DMainMenu.unity
+    guid: 829a86ba161cdd840842063447f41aab
+  - enabled: 0
+    path: Assets/Scenes/OLD Main Menu.unity
+    guid: 14891b9d206270144820b7e0435d7d86
+  - enabled: 0
+    path: Assets/Scenes/LevelOne.unity
+    guid: 0e34745ce2eb09d4eb28723009049c3a
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: b971fb85f780ad647b63e1a4441ce160
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: 0e34745ce2eb09d4eb28723009049c3a
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: b8c3d35e522c2a143841362244fcb407
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: b1ff869a0a0f9034c9a2515a36c64c36
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+>>>>>>> a71f5b8e7d6d19ad6a31a1ee1714732a2684d87f
   m_UseUCBPForAssetBundles: 0
