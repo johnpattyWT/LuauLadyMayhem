@@ -118,6 +118,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3699280208909425672}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6185415724735618203}
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2976573173694132918}
@@ -185,6 +188,12 @@ MonoBehaviour:
   attackRange: 20
   playerInSightRange: 0
   playerInAttackRange: 0
+  audioSource: {fileID: 0}
+  patrolClip: {fileID: 0}
+  chaseClip: {fileID: 0}
+  attackClip: {fileID: 0}
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 0}
 --- !u!54 &5155286669747858063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -235,6 +244,25 @@ CapsuleCollider:
   m_Height: 1.51
   m_Direction: 1
   m_Center: {x: 0, y: 0.45, z: -0.1}
+--- !u!114 &6185415724735618203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860079111100796134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb6ffa418fd6234bb144446f12b8727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _replacement: {fileID: 7045504323779456409, guid: 19954fab72ede4042a574acebb502a3a, type: 3}
+  _breakForce: 2
+  _collisionMultiplier: 10
+  breakFromLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  _broken: 0
 --- !u!1 &8530475774732858431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: ca3f47b178e4dc9438dc9a4d0f1a0f5c, type: 3}
