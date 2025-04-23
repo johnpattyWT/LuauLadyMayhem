@@ -16164,6 +16164,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6867146219272868970, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -878.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867146219272868970, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 471
+      objectReference: {fileID: 0}
     - target: {fileID: 7028393164166575371, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_HandleRect
       value: 
@@ -16226,11 +16234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8890075072251593240, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.5
+      value: -0.0000011921
       objectReference: {fileID: 0}
     - target: {fileID: 8890075072251593240, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.3
+      value: -0.000018835
       objectReference: {fileID: 0}
     - target: {fileID: 9221181763792785197, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_ShowMaskGraphic
