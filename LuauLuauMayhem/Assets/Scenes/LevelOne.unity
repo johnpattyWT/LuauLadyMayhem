@@ -7265,7 +7265,7 @@ Transform:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Modification:
+   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
@@ -7275,26 +7275,16 @@ PrefabInstance:
       objectReference: {fileID: 4646354552159585383, guid: d1980463d5facf34e9749b787b2610d5, type: 3}
     - target: {fileID: 2865752930568936065, guid: 73c06965ea583ab46883450ec8cf59fa, type: 3}
       propertyPath: breakFromLayers.m_Bits
-<<<<<<< HEAD
-      value: 0
-=======
       value: 4294967295
->>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed
       objectReference: {fileID: 0}
     - target: {fileID: 4636575510556557189, guid: 73c06965ea583ab46883450ec8cf59fa, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1022483869}
     - target: {fileID: 4636575510556557189, guid: 73c06965ea583ab46883450ec8cf59fa, type: 3}
-<<<<<<< HEAD
-      propertyPath: whatIsPlayer.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-=======
       propertyPath: deathClip
       value: 
       objectReference: {fileID: 8300000, guid: 070889e036c5baa40825470d4c1b4f02, type: 3}
->>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed
     - target: {fileID: 7191640330061907010, guid: 73c06965ea583ab46883450ec8cf59fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -461.37
@@ -14398,10 +14388,10 @@ PrefabInstance:
       propertyPath: maxChargeTime
       value: 2
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: DopplerLevel
-=======
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4627156900746009396, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: chargeStartClip
       value: 
@@ -14420,7 +14410,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: m_PlayOnAwake
->>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7210023939858422885, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}

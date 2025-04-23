@@ -79,19 +79,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-<<<<<<< HEAD
-=======
-        // One-time hit detection (for projectiles, etc.)
->>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed
+        // One-time hit detection (e.g., projectiles)
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Debug.Log("Hit by Projectile! Taking damage.");
             TakeDamage();
         }
     }
-<<<<<<< HEAD
-}
-=======
 
     private void OnCollisionStay(Collision collision)
     {
@@ -102,6 +96,4 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage();
         }
     }
-
 }
->>>>>>> 0e3eb29e9b459b247abfe221f599848dbf6218ed
