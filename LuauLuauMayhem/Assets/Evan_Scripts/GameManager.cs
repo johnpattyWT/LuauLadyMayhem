@@ -31,6 +31,7 @@ public class Game : MonoBehaviour
 
     public GameObject pausemenu;
     private bool isPaused = false;
+    private float styleDecayTimer = 0f;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -67,19 +68,26 @@ public class Game : MonoBehaviour
             }
         }
 
+        // 🔻 Style score decay logic
+        styleDecayTimer += Time.deltaTime;
+        if (styleDecayTimer >= 1f)
+        {
+            styleScore = Mathf.Max(styleScore - 15, 0); // prevent negative score
+            styleDecayTimer = 0f;
+            UpdateGrade(); // re-evaluate grade after decay
+        }
+
         UpdateUI();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
-            {
                 ResumeGame();
-            }
             else
-            {
                 PauseGame();
-            }
         }
     }
+
 
     public void RegisterKill()
     {
@@ -109,13 +117,13 @@ public class Game : MonoBehaviour
     {
         switch (combo)
         {
-            case 1: return 100;
-            case 2: return 200;
-            case 3: return 300;
-            case 4: return 400;
-            case 5: return 500;
-            case 6: return 1000;
-            default: return 100;
+            case 1: return 50;
+            case 2: return 100;
+            case 3: return 150;
+            case 4: return 200;
+            case 5: return 250;
+            case 6: return 500;
+            default: return 10;
         }
     }
 

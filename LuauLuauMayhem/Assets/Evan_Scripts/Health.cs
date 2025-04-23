@@ -73,11 +73,22 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check for a collision with objects tagged as "Projectile"
+        // One-time hit detection (for projectiles, etc.)
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Debug.Log("Hit by Projectile! Taking damage.");
             TakeDamage();
         }
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        // Continuous damage when staying in the Deathzone
+        if (collision.gameObject.CompareTag("Deathzone"))
+        {
+            Debug.Log("Still in Deathzone! Taking continuous damage.");
+            TakeDamage();
+        }
+    }
+
 }
