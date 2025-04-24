@@ -94,6 +94,7 @@ public class Game : MonoBehaviour
             else
                 PauseGame();
         }
+
     }
 
 

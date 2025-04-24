@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 349666638}
   - component: {fileID: 349666637}
   - component: {fileID: 349666636}
+  - component: {fileID: 349666639}
   m_Layer: 5
   m_Name: Play Again Button
   m_TagString: Untagged
@@ -463,6 +464,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349666634}
   m_CullTransparentMesh: 1
+--- !u!114 &349666639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349666634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46901b638c57bf4e8605da3a8c25f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &416471373
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +488,7 @@ GameObject:
   - component: {fileID: 416471376}
   - component: {fileID: 416471375}
   - component: {fileID: 416471377}
+  - component: {fileID: 416471378}
   m_Layer: 5
   m_Name: Lose Screen
   m_TagString: Untagged
@@ -566,6 +580,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &416471378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416471373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b6fe0a592b53e43b6ee79036fa5637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &459672862
 GameObject:
   m_ObjectHideFlags: 0
