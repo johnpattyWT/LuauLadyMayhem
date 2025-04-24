@@ -4716,11 +4716,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 4697769758095183619, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
   m_PrefabInstance: {fileID: 2494422528844677652}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1022483869 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7210023939858422885, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
-  m_PrefabInstance: {fileID: 2494422528844677652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1025060539
 PrefabInstance:
   m_ObjectHideFlags: 0
