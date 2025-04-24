@@ -53,15 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11346b54518dd794cb2629d734dc63c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -483.86
+      value: -370.027
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11346b54518dd794cb2629d734dc63c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.633
+      value: 4.1983495
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11346b54518dd794cb2629d734dc63c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -291.83
+      value: -239.5191
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11346b54518dd794cb2629d734dc63c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _replacement: {fileID: 4646354552159585383, guid: d1980463d5facf34e9749b787b2610d5, type: 3}
   _breakForce: 2
-  _collisionMultiplier: 100
+  _collisionMultiplier: 200
   breakFromLayers:
     serializedVersion: 2
     m_Bits: 0
