@@ -7367,6 +7367,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 596c1dfd1b230b44387c9b07f8c2fb75, type: 3}
+--- !u!114 &1349562530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791849037455631567, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+  m_PrefabInstance: {fileID: 2025249880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1350086218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11326,6 +11337,18 @@ PrefabInstance:
     - target: {fileID: 8744467174003515595, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_Name
       value: Testing UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791849037455631567, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791849037455631567, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791849037455631567, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8890075072251593240, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -15467,6 +15490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3040493242810923431, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 1349562530}
     - target: {fileID: 3040493242810923431, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: healthSlider
       value: 

@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerHealth : MonoBehaviour
     [Header("Smooth Transition Settings")]
     [Tooltip("Speed at which the health bar slides to the new value.")]
     public float smoothSpeed = 3f;
+
+    public Image Background;
 
     private PlayerAudioController audioController;
 
@@ -83,6 +86,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Debug.Log("Hit by Projectile! Taking damage.");
+            StartCoroutine(FlashRed());
             TakeDamage();
         }
     }
@@ -97,10 +101,17 @@ public class PlayerHealth : MonoBehaviour
             if (Time.time - lastDamageTime >= damageCooldown)
             {
                 Debug.Log("Still in Deathzone! Taking continuous damage.");
+                StartCoroutine(FlashRed());
                 TakeDamage();
                 lastDamageTime = Time.time;
             }
         }
     }
 
+    public IEnumerator FlashRed()
+    {
+        Background.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        Background.color = Color.white;
+    }
 }

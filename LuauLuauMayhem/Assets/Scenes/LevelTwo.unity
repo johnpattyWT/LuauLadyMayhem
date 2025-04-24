@@ -968,6 +968,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+--- !u!114 &2025249881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791849037455631567, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
+  m_PrefabInstance: {fileID: 2025249880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2120707032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4266812171269307649, guid: 0b8181a59d48d2d4388741dcc915a1cc, type: 3}
@@ -1061,6 +1072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3040493242810923431, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 2025249881}
     - target: {fileID: 3040493242810923431, guid: 9b2fe2fe76296d54ea0146aaefc0f331, type: 3}
       propertyPath: healthSlider
       value: 
