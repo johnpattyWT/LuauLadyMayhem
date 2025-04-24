@@ -3,13 +3,13 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
     public static Game instance;
     public LevelOne lifterScript;
     private bool liftTriggered = false;
-
     // 🔊 Event to notify other scripts when a kill is registered
     public event Action OnKillRegistered;
 
@@ -97,7 +97,7 @@ public class Game : MonoBehaviour
 
     }
 
-
+    
     public void RegisterKill()
     {
         globalKillCount++;
