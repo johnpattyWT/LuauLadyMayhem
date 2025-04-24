@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 4627156900746009396}
   - component: {fileID: 3040493242810923431}
   - component: {fileID: 4697769758095183619}
+  - component: {fileID: 3622185499329270371}
   m_Layer: 3
   m_Name: TempPlayer 1
   m_TagString: Player
@@ -584,7 +585,7 @@ MonoBehaviour:
   chargeStartClip: {fileID: 0}
   chargingLoopClip: {fileID: 0}
   shootClip: {fileID: 8300000, guid: 4c0e13010ee76a546aba06e72b5e0d88, type: 3}
-  chargeCancelClip: {fileID: 0}
+  chargeCancelClip: {fileID: 8300000, guid: 52822d699d35000489935f65e42fadfb, type: 3}
 --- !u!114 &3040493242810923431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,15 +617,15 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7128067719386893152, guid: 204ae77320b536d459d12c2126255a73, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.859
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
+  Priority: 70
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -701,6 +702,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3622185499329270371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082829436478228187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bde45729a67231489f66dcb08b120c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 4697769758095183619}
+  idleClips:
+  - {fileID: 8300000, guid: 9e2be6eda043b6a4084da52f8e96c3e1, type: 3}
+  - {fileID: 8300000, guid: df0cc6e3d10c1c14ca308b8d80474ac6, type: 3}
+  minIdleDelay: 20
+  maxIdleDelay: 50
+  jumpClips:
+  - {fileID: 8300000, guid: 512e59135de7e1043bb7d5f3463d6767, type: 3}
+  - {fileID: 8300000, guid: b0f29a31c6a13474d872fe47385aea1e, type: 3}
+  - {fileID: 8300000, guid: d7596f43958a6ad47b0a1be32c87e764, type: 3}
+  hurtClips:
+  - {fileID: 8300000, guid: e42028a5a446994449d6ae9a1300a773, type: 3}
+  - {fileID: 8300000, guid: 6f1e50242e18ba74ebc96e8915c3ac54, type: 3}
+  - {fileID: 8300000, guid: 317fb745ea6eaa54f959a63ae9a469e2, type: 3}
+  - {fileID: 8300000, guid: e0730609e7a3f4b498f7447e57f35808, type: 3}
+  killClips:
+  - {fileID: 8300000, guid: 7412d5d0ed31a294f99ac4063950ba3b, type: 3}
+  - {fileID: 8300000, guid: 8517554731468c44985b076d26a5a659, type: 3}
+  - {fileID: 8300000, guid: 327f4db118bb6e043be48e2948664c4a, type: 3}
+  - {fileID: 8300000, guid: 598d5165e332ab345bfc6ccefe44342a, type: 3}
+  - {fileID: 8300000, guid: 587e2b95491049047b02ff22516b3cdf, type: 3}
+  - {fileID: 8300000, guid: ee532ef7f9724cc40a9ff942b1d675cc, type: 3}
+  - {fileID: 8300000, guid: cd16768ebfac81d4f91be87510cb5c9c, type: 3}
+  killClipChance: 0.2
 --- !u!1 &1427357425507988933
 GameObject:
   m_ObjectHideFlags: 0
