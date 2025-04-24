@@ -194,70 +194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2190276}
   m_CullTransparentMesh: 1
---- !u!1 &10523804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 10523807}
-  - component: {fileID: 10523806}
-  - component: {fileID: 10523805}
-  m_Layer: 0
-  m_Name: MenuController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &10523805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10523804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8d2de16a11b30146b0c4174c745bde8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &10523806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10523804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908c3fe9756cbab4bb30043b9e41a9be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TitleScreen: {fileID: 0}
-  Main_Menu: {fileID: 0}
-  titleCanvasGroup: {fileID: 0}
-  mainMenuCanvasGroup: {fileID: 0}
-  audioSource: {fileID: 0}
-  fadeOutSound: {fileID: 0}
-  fadeDuration: 1
---- !u!4 &10523807
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10523804}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 357.04956, y: 183.203, z: 51.95736}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &21263598
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +413,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10523805}
+      - m_Target: {fileID: 459672863}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: OnClickPlayButton
         m_Mode: 1
@@ -630,6 +566,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &459672862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459672865}
+  - component: {fileID: 459672864}
+  - component: {fileID: 459672863}
+  m_Layer: 0
+  m_Name: MenuController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &459672863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459672862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d2de16a11b30146b0c4174c745bde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &459672864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459672862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908c3fe9756cbab4bb30043b9e41a9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TitleScreen: {fileID: 0}
+  Main_Menu: {fileID: 0}
+  titleCanvasGroup: {fileID: 0}
+  mainMenuCanvasGroup: {fileID: 0}
+  audioSource: {fileID: 0}
+  fadeOutSound: {fileID: 0}
+  fadeDuration: 1
+--- !u!4 &459672865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459672862}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 357.04956, y: 183.203, z: 51.95736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &486909711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10523805}
+      - m_Target: {fileID: 459672863}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: OnClickQuitButton
         m_Mode: 1
@@ -1512,4 +1512,4 @@ SceneRoots:
   - {fileID: 756867150}
   - {fileID: 739089002}
   - {fileID: 486909714}
-  - {fileID: 10523807}
+  - {fileID: 459672865}
