@@ -21,7 +21,11 @@ public class PlayerHealth : MonoBehaviour
     [Tooltip("Speed at which the health bar slides to the new value.")]
     public float smoothSpeed = 3f;
 
+    [Header("Damage Feedback")]
     public Image Background;
+    public ParticleSystem blood;
+    public ParticleSystem bloodDrops;
+    public ParticleSystem bloodSmoke;
 
     private PlayerAudioController audioController;
 
@@ -87,6 +91,9 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Hit by Projectile! Taking damage.");
             StartCoroutine(FlashRed());
+            blood.Play();
+            bloodDrops.Play();
+            bloodSmoke.Play();
             TakeDamage();
         }
     }
