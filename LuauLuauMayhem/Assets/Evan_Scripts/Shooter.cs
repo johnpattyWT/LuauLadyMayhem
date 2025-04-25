@@ -12,6 +12,8 @@ public class PlayerShooter : MonoBehaviour
     public float maxProjectileSpeed = 50f;
     public float fireCooldown = 0.25f;
     public Camera playerCamera;
+    private Animator animator;
+    private vThirdPersonController controller;
 
     [Header("UI")]
     public Slider chargeSlider;
@@ -31,9 +33,10 @@ public class PlayerShooter : MonoBehaviour
 
     private void Start()
     {
-        
 
-        
+
+        controller = GetComponent<vThirdPersonController>();
+        animator = GetComponent<Animator>();
 
         if (chargingLoopClip != null)
         {
@@ -90,6 +93,7 @@ public class PlayerShooter : MonoBehaviour
             float finalSpeed = Mathf.Lerp(10f, maxProjectileSpeed, chargePercent);
 
             Shoot(finalSpeed, chargePercent);
+            animator.SetTrigger("isThrowing");
 
             if (chargeSlider != null)
             {
