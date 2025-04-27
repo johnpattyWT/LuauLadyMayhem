@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 
 namespace SlimUI.ModernMenu{
 	public class UISettingsManager : MonoBehaviour {
@@ -31,15 +32,16 @@ namespace SlimUI.ModernMenu{
 		public GameObject texturelowtextLINE;
 		public GameObject texturemedtextLINE;
 		public GameObject texturehightextLINE;
-		public GameObject cameraeffectstext; 
+		public GameObject cameraeffectstext;
 
+        public Slider musicSlider;
+        public Slider sfxSlider;
+        public AudioMixer audioMixer;
 
-
-		[Header("CONTROLS SETTINGS")]
+        [Header("CONTROLS SETTINGS")]
 		public GameObject invertmousetext;
 
 		// sliders
-		public GameObject musicSlider;
 		public GameObject sensitivityXSlider;
 		public GameObject sensitivityYSlider;
 		public GameObject mouseSmoothSlider;
@@ -189,12 +191,21 @@ namespace SlimUI.ModernMenu{
 			}
 		}
 
-		public void MusicSlider (){
-			//PlayerPrefs.SetFloat("MusicVolume", sliderValue);
-			PlayerPrefs.SetFloat("MusicVolume", musicSlider.GetComponent<Slider>().value);
-		}
+        public void MusicSlider()
+        {
+            float musicVolume = musicSlider.value;
+            PlayerPrefs.SetFloat("Music", musicVolume);
+            audioMixer.SetFloat("Music", Mathf.Log10(musicVolume) * 20); // usually mixers use decibels
+        }
 
-		public void SensitivityXSlider (){
+        public void SFXSlider()
+        {
+            float sfxVolume = sfxSlider.value;
+            PlayerPrefs.SetFloat("SFX", sfxVolume);
+            audioMixer.SetFloat("SFX", Mathf.Log10(sfxVolume) * 20);
+        }
+
+        public void SensitivityXSlider (){
 			PlayerPrefs.SetFloat("XSensitivity", sliderValueXSensitivity);
 		}
 
