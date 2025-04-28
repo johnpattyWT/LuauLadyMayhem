@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 541205038623925783}
   - component: {fileID: 1751569302384213800}
+  - component: {fileID: 6684334857345559357}
+  - component: {fileID: 5809577979056889185}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de2b4f7da443804b9b69ac71f515ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifterScript: {fileID: 0}
   globalKillCount: 0
   killCountText: {fileID: 0}
   styleScore: 0
@@ -57,3 +60,31 @@ MonoBehaviour:
   killClip: {fileID: 8300000, guid: 37c9133889e2bfc4296ead93a281acc2, type: 3}
   comboClip: {fileID: 0}
   rankUpClip: {fileID: 0}
+--- !u!114 &6684334857345559357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041232727784467290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f543d3f5a35764e9e2130825e9d474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 0}
+  speedText: {fileID: 0}
+--- !u!114 &5809577979056889185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041232727784467290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984f37afb309e6c478f8e013815938e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  isRunning: 0
