@@ -81,7 +81,7 @@ public class PlayerShooter : MonoBehaviour
                 if (chargeSlider.fillRect != null)
                 {
                     Image fillImage = chargeSlider.fillRect.GetComponent<Image>();
-                    fillImage.color = Color.Lerp(Color.white, Color.red, chargePercent);
+                    fillImage.color = Color.Lerp(Color.yellow, Color.red, chargePercent);
                 }
             }
         }
