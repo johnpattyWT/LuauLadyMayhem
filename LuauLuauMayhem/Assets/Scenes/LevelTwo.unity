@@ -791,6 +791,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 316.47
       objectReference: {fileID: 0}
+    - target: {fileID: 7551071623582972821, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 486b646b94d00244f95289d1443b3fe0, type: 3}
+    - target: {fileID: 7551071623582972821, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551071623582972821, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551071623582972821, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551071623582972821, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7076015835633723119, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
