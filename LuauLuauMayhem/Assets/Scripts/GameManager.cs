@@ -161,8 +161,8 @@ public class Game : MonoBehaviour
     {
         styleScoreText.text = styleScore.ToString();
         styleGradeText.text = currentGrade;
-        styleScoreTextLS.text = "Score: " + styleScore.ToString();
-        styleGradeTextLS.text = currentGrade;
+        styleScoreTextLS.text = styleScoreText.text;
+        styleGradeTextLS.text = styleGradeText.text;
 
         if (styleScoreSlider != null)
         {

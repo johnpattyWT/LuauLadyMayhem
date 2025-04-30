@@ -82,6 +82,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
+        Time.timeScale = 0.0f;
         GameOver.SetActive(true);
     }
 
