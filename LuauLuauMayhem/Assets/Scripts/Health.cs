@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("UI Elements")]
     public Slider healthSlider;          // Assign your Slider in the Inspector
     public Image healthFillImage;        // Assign the fill Image of your Slider
+    public GameObject GameOver;
 
     [Header("Health Colors")]
     public Color fullHealthColor = Color.green;
@@ -81,7 +82,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
-        SceneManager.LoadScene("LoseScreen");
+        GameOver.SetActive(true);
     }
 
     private void OnCollisionEnter(Collision collision)
