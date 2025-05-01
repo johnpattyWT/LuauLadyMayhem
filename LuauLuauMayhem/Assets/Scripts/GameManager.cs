@@ -16,7 +16,6 @@ public class Game : MonoBehaviour
     [Header("Kill Counter")]
     public int globalKillCount = 0;
     public TMP_Text killCountText;
-    public TMP_Text killCountTextLS;
 
     [Header("Style Meter")]
     public int styleScore = 0;
@@ -102,7 +101,6 @@ public class Game : MonoBehaviour
     {
         globalKillCount++;
         killCountText.text = "x" + globalKillCount.ToString();
-        killCountTextLS.text = "Kills: " + globalKillCount.ToString();
 
         comboKills++;
         comboTimer = 0f;
