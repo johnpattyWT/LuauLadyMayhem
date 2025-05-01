@@ -52,10 +52,7 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject); // Prevent duplicates
+        
 
         ResumeGame();
     }

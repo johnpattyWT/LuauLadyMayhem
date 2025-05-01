@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.ComponentModel;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -82,8 +83,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
-        Time.timeScale = 0.0f;
-        GameOver.SetActive(true);
+        SceneManager.LoadScene("LoseScreen");
     }
 
     private void OnCollisionEnter(Collision collision)
