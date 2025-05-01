@@ -212,7 +212,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelOne
+          m_StringArgument: 3DMainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &349666637
@@ -282,7 +282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &394469856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1615,7 +1615,9 @@ PrefabInstance:
       propertyPath: playerRigidbody
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6684334857345559357, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
+    - {fileID: 5809577979056889185, guid: 555926110b0ed354b861ff7f37625a2d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
