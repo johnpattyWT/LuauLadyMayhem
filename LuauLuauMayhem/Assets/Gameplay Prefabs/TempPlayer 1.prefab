@@ -826,6 +826,7 @@ MonoBehaviour:
   currentHealth: 0
   healthSlider: {fileID: 0}
   healthFillImage: {fileID: 0}
+  GameOver: {fileID: 0}
   fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   lowHealthColor: {r: 1, g: 0, b: 0, a: 1}
   smoothSpeed: 3
@@ -5898,7 +5899,7 @@ PrefabInstance:
     - target: {fileID: -8913761997435978115, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 377038b9248e4be419636cdc6be5ee77, type: 2}
+      objectReference: {fileID: 2100000, guid: 9d464ae074c1b9e458f2c223963bffdc, type: 2}
     - target: {fileID: -8679921383154817045, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5947,6 +5948,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9d464ae074c1b9e458f2c223963bffdc, type: 2}
+    - target: {fileID: -3568588255811911513, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2790888924719471608, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -5958,6 +5963,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
       propertyPath: m_Name
       value: Goku
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3495429884826132081, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5983,6 +5992,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: cbd1db45c75e5b948a5befe9ecb80421, type: 2}
+    - target: {fileID: 6445533570671426068, guid: 195b5b023caf65b4396832ca86e3c852, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
