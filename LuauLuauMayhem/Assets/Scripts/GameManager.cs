@@ -22,9 +22,7 @@ public class Game : MonoBehaviour
     public int styleScore = 0;
     public string currentGrade = "F";
     public TMP_Text styleScoreText;
-    public TMP_Text styleScoreTextLS;
     public TMP_Text styleGradeText;
-    public TMP_Text styleGradeTextLS;
     public Slider styleScoreSlider;
 
     [Header("Kill Feed")]
@@ -161,8 +159,7 @@ public class Game : MonoBehaviour
     {
         styleScoreText.text = styleScore.ToString();
         styleGradeText.text = currentGrade;
-        styleScoreTextLS.text = styleScoreText.text;
-        styleGradeTextLS.text = styleGradeText.text;
+      
 
         if (styleScoreSlider != null)
         {
