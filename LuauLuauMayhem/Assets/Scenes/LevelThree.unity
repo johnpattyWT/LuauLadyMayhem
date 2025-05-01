@@ -4167,6 +4167,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7600665315141577083, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
+      propertyPath: nextSceneName
+      value: WinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600665315141577083, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
       propertyPath: killCountTextLS
       value: 
       objectReference: {fileID: 773725791}
@@ -4178,6 +4182,10 @@ PrefabInstance:
       propertyPath: styleScoreTextLS
       value: 
       objectReference: {fileID: 426799919}
+    - target: {fileID: 7600665315141577083, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
+      propertyPath: killamountforpass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7848025950592204992, guid: 94739caefef488843ad7f28337f0c2a4, type: 3}
       propertyPath: m_IsActive
       value: 1

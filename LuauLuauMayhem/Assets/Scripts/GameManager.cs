@@ -46,7 +46,8 @@ public class Game : MonoBehaviour
     public AudioClip killClip;
     public AudioClip comboClip;
     public AudioClip rankUpClip;
-
+    public string nextSceneName;  // Public string to hold the scene name
+    public int killamountforpass;
     private string lastGrade = "F";
 
     private void Awake()
@@ -91,7 +92,10 @@ public class Game : MonoBehaviour
             lifterScript.StartLiftSequence();
             liftTriggered = true;
         }
-
+        if (globalKillCount >= killamountforpass)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
         UpdateUI();
 
         if (Input.GetKeyDown(KeyCode.Escape))
