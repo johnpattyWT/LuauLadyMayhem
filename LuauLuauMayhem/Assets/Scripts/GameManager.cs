@@ -157,7 +157,6 @@ public class Game : MonoBehaviour
 
     private void UpdateUI()
     {
-        styleScoreText.text = styleScore.ToString();
         styleGradeText.text = currentGrade;
       
 
