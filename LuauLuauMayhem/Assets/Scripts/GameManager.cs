@@ -17,17 +17,14 @@ public class Game : MonoBehaviour
     public int globalKillCount = 0;
     public TMP_Text killCountText;
     public TMP_Text killCountTextLS;
-    public TMP_Text killCountTextWS;
 
     [Header("Style Meter")]
     public int styleScore = 0;
     public string currentGrade = "F";
     public TMP_Text styleScoreText;
     public TMP_Text styleScoreTextLS;
-    public TMP_Text styleScoreTextWS;
     public TMP_Text styleGradeText;
     public TMP_Text styleGradeTextLS;
-    public TMP_Text styleGradeTextWS;
     public Slider styleScoreSlider;
 
     [Header("Kill Feed")]
@@ -108,7 +105,6 @@ public class Game : MonoBehaviour
         globalKillCount++;
         killCountText.text = "x" + globalKillCount.ToString();
         killCountTextLS.text = "Kills: " + globalKillCount.ToString();
-        killCountTextWS.text = "Kills: " + globalKillCount.ToString();
 
         comboKills++;
         comboTimer = 0f;
@@ -167,8 +163,6 @@ public class Game : MonoBehaviour
         styleGradeText.text = currentGrade;
         styleScoreTextLS.text = styleScoreText.text;
         styleGradeTextLS.text = styleGradeText.text;
-        styleScoreTextWS.text = styleScoreText.text;
-        styleGradeTextWS.text = styleGradeText.text;
 
         if (styleScoreSlider != null)
         {
