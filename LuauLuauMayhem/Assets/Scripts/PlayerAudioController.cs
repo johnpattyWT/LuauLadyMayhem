@@ -19,22 +19,24 @@ public class PlayerAudioController : MonoBehaviour
 
     [Header("Kill Clips")]
     public AudioClip[] killClips;
-    public float killClipChance = 0.1f; // 10%
+    [Range(0, 1)] public float killClipChance = 0.1f;
 
     private void Start()
     {
         if (!audioSource) audioSource = GetComponent<AudioSource>();
+        
         StartCoroutine(IdleVoiceLoop());
 
-        // Subscribe to kill event (make sure Game.RegisterKill calls this)
-        if (Game.instance != null)
+        // Subscribe to the kill event in the new GameCore system
+        if (GameCore.Instance != null)
         {
-            Game.instance.OnKillRegistered += OnKillRegistered;
+            GameCore.Instance.OnKill += HandleOnKill;
         }
     }
 
     private void Update()
     {
+        // Plays jump sound when space is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayRandomClip(jumpClips);
@@ -48,7 +50,8 @@ public class PlayerAudioController : MonoBehaviour
             float waitTime = Random.Range(minIdleDelay, maxIdleDelay);
             yield return new WaitForSeconds(waitTime);
 
-            if (!audioSource.isPlaying)
+            // Only play idle lines if the character isn't already talking
+            if (audioSource != null && !audioSource.isPlaying)
             {
                 PlayRandomClip(idleClips);
             }
@@ -60,7 +63,7 @@ public class PlayerAudioController : MonoBehaviour
         PlayRandomClip(hurtClips);
     }
 
-    public void OnKillRegistered()
+    private void HandleOnKill()
     {
         if (Random.value <= killClipChance)
         {
@@ -70,7 +73,7 @@ public class PlayerAudioController : MonoBehaviour
 
     private void PlayRandomClip(AudioClip[] clips)
     {
-        if (clips.Length == 0 || audioSource == null) return;
+        if (clips == null || clips.Length == 0 || audioSource == null) return;
 
         AudioClip clip = clips[Random.Range(0, clips.Length)];
         audioSource.PlayOneShot(clip);
@@ -78,9 +81,10 @@ public class PlayerAudioController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Game.instance != null)
+        // Clean up the subscription when the player is destroyed or the scene changes
+        if (GameCore.Instance != null)
         {
-            Game.instance.OnKillRegistered -= OnKillRegistered;
+            GameCore.Instance.OnKill -= HandleOnKill;
         }
     }
 }
